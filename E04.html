@@ -7,11 +7,40 @@
     //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
 
     //ENTRADA
-
+    const cargo = prompt("qual seu cargo? estagiario ou programador").trim().toUpperCase();
+    const salario = Number(prompt("qual seu salario").trim().replace(".",","));
+    const horas = Number(prompt("quantas horas voce trabalha?").trim());
 
     //PROCESSAMENTO
+    const salH = salario / horas
+    const salF1 = (salario * 0.5) + salario
+    const salF2 = salF1 / horas
+   
 
 
     //SAÍDA
+    if(cargo!== "ESTAGIARIO" || cargo!=="PROGRAMADOR"){
+        alert("respostas invaldas");
+    }
+    else{
+        if(cargo == "ESTAGIARIO"){
+            if(horas <= 6){
+                alert(`voce recebe R$${salH.toFixed(2)} por hora`)
+            }
+            else{
+                alert(`precisa ser contratado, receberá um salario de R$${salF2.toFixed(2)} por hora e ganhar R$${salF2.toFixed(2)} de salario final`)
+
+            }
+        }
+        else{
+            if(horas <= 8){
+                alert(`voce recebe R$${salH.toFixed(2)} por hora`)
+            }
+            else{
+                alert(`precisa ser contratado, receberá um salario de R$${salF2.toFixed(2)} por hora e ganhar R$${salF2.toFixed(2)} de salario final`)
+
+            }
+        }
+    }
 
 </script>

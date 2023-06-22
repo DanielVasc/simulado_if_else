@@ -6,9 +6,28 @@
     //Contudo, caso o aluno que ajudou (TUTOR) obteve maior nota, bonifique-o com um adicional de 10% da nota do aluno ajudado, e o programa apresentará a mensagem "CONTINUE ENSINANDO!" e também apresentará a nota final do aluno que ajudou (TUTOR).
 
     //ENTRADA
+    const tutor = Number(prompt("qual a nota do tutor").trim().replace(".",","));
+    const ajudado = Number(prompt("qual a nota do aluno ajudado").trim().replace(".",","));
 
 
     //PROCESSAMENTO
+    if(ajudado > tutor){
+        alert("CRIA MAIOR QUE O CRIADOR");
+    }
+    else if (ajudado == tutor){
+        alert("notas iguais");
+    }
+    else{
+        const boni1 = tutor * 0.1;
+        const boni2 = tutor + boni1;
+
+        if(boni2 > 10){
+            alert("CONTINUE ENSINANDO! SEU BONUS SERÁ ADICIONADO NO PROXIMO SEMESTRE");
+        }
+        else{
+            alert(`CONTINUE ENSINANDO! SUA NOTA FINAL É: ${boni2.toFixed(1)}`)
+        }
+    }
 
 
     //SAÍDA

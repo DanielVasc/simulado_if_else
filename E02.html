@@ -9,11 +9,29 @@
     //Calcule o custo total dos alimentos e verifique se há dinheiro suficiente para realizar a compra, indicando se sobrará ou faltará dinheiro, e também apresentando qual foi a quantia que sobrou ou faltou para realizar a compra. Apresente também na tela o valor total da compra.
 
     //ENTRADA
-
+    const mamão = Number(prompt("qual o preço do mamão").trim().replace(".",","));
+    const melancia = Number(prompt("qual o preço do melancia").trim().replace(".",","));
+    const abacate = Number(prompt("qual o preço do abacate").trim().replace(".",","));
+    const cebola = Number(prompt("qual o preço do cebola").trim().replace(".",","));
+    const dinheiro = Number(prompt("quanto dinheiro voce tem").trim().replace(".",","));
 
     //PROCESSAMENTO
+    const preço_mamão  = mamão * 5;
+    const preço_melanc = melancia * 3;     
+    const preço_abacat = abacate * 4;
+    const preço_cebola = cebola * 1.1;
+    const total = preço_mamão + preço_abacat + preço_cebola + preço_melanc;
 
 
     //SAÍDA
+
+    if(dinheiro < total){
+        const total2 = total - dinheiro;
+        alert(`dinheiro insuficiente, faltou R$ ${total2.toFixed(2)}`);
+    }
+    else{
+        const total2 = dinheiro - total
+        alert(`seu troco seria de R$${total2.tofixed(2)}`)
+    }
 
 </script>
